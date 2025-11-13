@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongoadmin
+      MONGO_INITDB_ROOT_PASSWORD: plutao
+    volumes:
+      - mongo_data:/data/db
+
+  myrecipes:
+    image: danieldevlopes/myrecipes-main:latest
+    container_name: myrecipes
+    ports:
+      - "8080:8080"
+    environment:
+      MONGODB_URI: mongodb://mongoadmin:plutao@mongodb:27017/receita_facil?authSource=admin
+      DATABASE_NAME: receita_facil
+      SECRET: plutao
+    depends_on:
+      - mongodb
+
+volumes:
+  mongo_data:
