@@ -6,8 +6,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
-import com.crs.receitafacil.ui.presentation.features.register.presentation.RegisterScreen
-import com.crs.receitafacil.ui.presentation.features.register.presentation.RegisterUserViewModel
+import com.crs.receitafacil.ui.presentation.features.auth.register.presentation.RegisterScreen
+import com.crs.receitafacil.ui.presentation.features.auth.register.presentation.RegisterUserViewModel
 import com.crs.receitafacil.ui.presentation.navigation.screens.AuthScreens
 
 fun NavGraphBuilder.registerScreen(
@@ -19,6 +19,7 @@ fun NavGraphBuilder.registerScreen(
         val sideEffectFlow = viewModel.sideEffectChannel
         RegisterScreen(
             uiState = uiState,
+            sideEffectFlow = sideEffectFlow,
             onEvent = { viewModel.onEvent(it) },
             onNameChanged = { viewModel.onNameInputChange(it) },
             onEmailChanged = { viewModel.onEmailInputChange(it) },
