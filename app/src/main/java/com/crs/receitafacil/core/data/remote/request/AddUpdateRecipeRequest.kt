@@ -1,0 +1,16 @@
+package com.crs.receitafacil.core.data.remote.request
+
+import com.google.gson.annotations.SerializedName
+
+data class AddUpdateRecipeRequest(
+    @SerializedName("name")
+    val name: String,
+    @SerializedName("category")
+    val category: Int,
+    @SerializedName("preparationTime")
+    val preparationTime: Int,
+    @SerializedName("preparationMode")
+    val preparationMode: Int,
+    @SerializedName("ingredients")
+    val ingredients: List<AddIngredientRequest> = listOf()
+)

@@ -1,6 +1,7 @@
 package com.crs.receitafacil.core.di
 
 import com.crs.receitafacil.BuildConfig
+import com.crs.receitafacil.core.data.remote.AccessTokenInterceptor
 import com.crs.receitafacil.core.data.remote.RecipeServiceApi
 import com.crs.receitafacil.core.data.remote.RecipeServiceApiImpl
 import com.google.gson.Gson
@@ -46,6 +47,7 @@ object KtorModule {
     @Singleton
     fun providerHttpClient(
         okHttpClient: OkHttpClient,
+        accessTokenInterceptor: AccessTokenInterceptor
     ): HttpClient {
 
         return HttpClient(OkHttp) {
@@ -55,7 +57,7 @@ object KtorModule {
             engine {
                 preconfigured = okHttpClient
                 config {
-
+                    addInterceptor(accessTokenInterceptor)
                 }
             }
             install(Logging) {
