@@ -6,6 +6,7 @@ O objetivo da aplicação é oferecer uma experiência moderna e intuitiva para 
 Durante o desenvolvimento, você pode ir além do proposto, expandindo recursos, aprimorando a arquitetura ou adicionando novas experiências ao usuário.
 
 ---
+<img width="545" height="277" alt="recipes" src="https://github.com/user-attachments/assets/1158fb12-378c-45b3-80a9-f72ff80f256c" />
 
 ## 🚀 Tecnologias
 
