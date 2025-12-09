@@ -4,18 +4,31 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.navigation
-import com.crs.receitafacil.ui.presentation.navigation.homeScreen
-import com.crs.receitafacil.ui.presentation.navigation.screens.AuthScreens
+import com.crs.receitafacil.ui.presentation.navigation.recipesScreen
 import com.crs.receitafacil.ui.presentation.navigation.screens.Graphs
 import com.crs.receitafacil.ui.presentation.navigation.screens.HomeScreens
 
 fun NavGraphBuilder.homeGraph(
     onNavigateUp: () -> Unit,
+
+    onNavigateToAuthGraph: () -> Unit = {},
+    onNavigationToProfileScreen: () -> Unit,
+    onNavigationToSearchScreen: () -> Unit,
+    onNavigationToAddRecipeScreen: () -> Unit,
+    onNavigationToUsersConnectionScreen: () -> Unit,
+    onNavigationToRecipeDetailsScreen: (recipeId: String) -> Unit
 ) {
     navigation<Graphs.HomeGraph>(
-        startDestination = HomeScreens.HomeScreen
+        startDestination = HomeScreens.RecipesScreen
     ) {
-        homeScreen()
+        recipesScreen(
+            onNavigateToAuthGraph = onNavigateToAuthGraph,
+            onNavigationToProfileScreen = onNavigationToProfileScreen,
+            onNavigationToSearchScreen = onNavigationToSearchScreen,
+            onNavigationToAddRecipeScreen = onNavigationToAddRecipeScreen,
+            onNavigationToUsersConnectionScreen = onNavigationToUsersConnectionScreen,
+            onNavigationToRecipeDetailsScreen = { onNavigationToRecipeDetailsScreen(it) },
+        )
     }
 }
 

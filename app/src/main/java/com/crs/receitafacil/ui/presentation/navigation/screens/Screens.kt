@@ -33,7 +33,7 @@ sealed interface HomeScreens {
     data class WebSocketUpdateScreen(val qrcode: String?) : HomeScreens
 
     @Serializable
-    data object HomeScreen : HomeScreens
+    data object RecipesScreen : HomeScreens
 
     @Serializable
     data object ProfileScreen : HomeScreens
