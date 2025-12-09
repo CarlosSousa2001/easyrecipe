@@ -8,9 +8,9 @@ data class AddUpdateRecipeRequest(
     @SerializedName("category")
     val category: Int,
     @SerializedName("preparationTime")
-    val preparationTime: Int,
+    val preparationTime: String,
     @SerializedName("preparationMode")
-    val preparationMode: Int,
+    val preparationMode: String,
     @SerializedName("ingredients")
     val ingredients: List<AddIngredientRequest> = listOf()
 )
