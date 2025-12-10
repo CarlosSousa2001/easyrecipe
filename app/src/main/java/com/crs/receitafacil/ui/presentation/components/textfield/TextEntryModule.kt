@@ -53,7 +53,7 @@ fun TextEntryModule(
         OutlinedTextField(
             value = textValue,
             onValueChange = onValueChanged,
-            modifier = Modifier.fillMaxWidth(),
+            modifier = modifier.fillMaxWidth(),
             label = {
                 Text(
                     text = description,

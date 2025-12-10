@@ -21,7 +21,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.crs.receitafacil.ui.theme.poppinsFOntFamily
 
 @Composable
@@ -30,10 +29,11 @@ fun IngredientItem(
     productName: String,
     productQuantity: String,
     iconButton: Boolean = false,
-    onRemoveIngredientItem: () -> Unit = {}
+    onRemoveIngredient: () -> Unit = {}
 ) {
     Row(
-        modifier = modifier.fillMaxWidth()
+        modifier = modifier
+            .fillMaxWidth()
             .padding(8.dp),
         horizontalArrangement = Arrangement.spacedBy(8.dp),
         verticalAlignment = Alignment.CenterVertically
@@ -63,10 +63,10 @@ fun IngredientItem(
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
 
-        if(iconButton) {
+        if (iconButton) {
             Spacer(modifier = Modifier.weight(1f))
             IconButton(
-                onClick = onRemoveIngredientItem
+                onClick = onRemoveIngredient
             ) {
                 Icon(
                     imageVector = Icons.Outlined.RemoveCircleOutline,
@@ -78,5 +78,5 @@ fun IngredientItem(
         }
     }
 
-    HorizontalDivider(color =  Color.DarkGray)
+    HorizontalDivider(color = Color.DarkGray)
 }
