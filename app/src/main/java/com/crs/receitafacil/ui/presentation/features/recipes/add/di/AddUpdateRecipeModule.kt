@@ -8,6 +8,8 @@ import com.crs.receitafacil.ui.presentation.features.recipes.add.domain.reposito
 import com.crs.receitafacil.ui.presentation.features.recipes.add.domain.source.AddUpdateRecipeRemoteDataSource
 import com.crs.receitafacil.ui.presentation.features.recipes.add.domain.usecase.AddRecipeUseCase
 import com.crs.receitafacil.ui.presentation.features.recipes.add.domain.usecase.AddRecipeUseCaseImpl
+import com.crs.receitafacil.ui.presentation.features.recipes.add.domain.usecase.UpdateRecipeUseCase
+import com.crs.receitafacil.ui.presentation.features.recipes.add.domain.usecase.UpdateRecipeUseCaseImpl
 import com.crs.receitafacil.ui.presentation.features.recipes.add.domain.usecase.ValidateAddUpdateRecipeInputUseCase
 import com.crs.receitafacil.ui.presentation.features.recipes.add.domain.usecase.ValidateAddUpdateRecipeInputUseCaseImpl
 import com.crs.receitafacil.ui.presentation.features.recipes.add.domain.usecase.ValidateDialogInputUseCase
@@ -43,6 +45,17 @@ object AddUpdateRecipeModule {
             dispatchersProvider = dispatchersProvider
         )
     }
+
+    @Provides
+    @Singleton
+    fun provideUpdateRecipeUseCase(
+        addUpdateRecipeRepository: AddUpdateRecipeRepository
+    ): UpdateRecipeUseCase {
+        return UpdateRecipeUseCaseImpl(
+            addUpdateRecipeRepository = addUpdateRecipeRepository
+        )
+    }
+
 
     @Provides
     @Singleton

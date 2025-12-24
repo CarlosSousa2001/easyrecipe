@@ -4,6 +4,7 @@ import com.crs.receitafacil.core.data.remote.RecipeServiceApi
 import com.crs.receitafacil.core.domain.exceptions.ErrorResponseException
 import com.crs.receitafacil.core.domain.model.SimpleResponseModel
 import com.crs.receitafacil.core.utils.ServiceResult
+import com.crs.receitafacil.core.utils.logging.logInfo
 import com.crs.receitafacil.ui.presentation.features.auth.register.data.mapper.toSimplesResponseModel
 import com.crs.receitafacil.ui.presentation.features.recipes.add.data.mappers.toAddUpdateRecipeRequest
 import com.crs.receitafacil.ui.presentation.features.recipes.add.domain.model.AddUpdateRecipeRequestModel

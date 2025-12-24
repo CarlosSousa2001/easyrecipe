@@ -32,8 +32,7 @@ import com.crs.receitafacil.ui.theme.poppinsFOntFamily
 @Composable
 fun TextEntryModule(
     modifier: Modifier = Modifier
-        .fillMaxWidth()
-        .padding(start = 8.dp, end = 8.dp, bottom = 5.dp),
+        .fillMaxWidth(),
     description: String,
     hint: String,
     leadingIcon: ImageVector,

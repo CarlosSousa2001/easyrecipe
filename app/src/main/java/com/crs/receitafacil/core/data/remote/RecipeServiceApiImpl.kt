@@ -8,6 +8,7 @@ import com.crs.receitafacil.core.data.remote.response.RecipesResponse
 import com.crs.receitafacil.core.data.remote.response.SimpleResponse
 import com.crs.receitafacil.core.data.remote.response.TokenResponse
 import com.crs.receitafacil.core.data.remote.response.UserResponse
+import com.crs.receitafacil.core.utils.logging.logInfo
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.delete
@@ -29,6 +30,7 @@ class RecipeServiceApiImpl @Inject constructor(
             contentType(ContentType.Application.Json)
             setBody(authUserRequest)
         }
+        logInfo("TOKEN_RESPONSE",response.body() )
         return response.body()
     }
 
