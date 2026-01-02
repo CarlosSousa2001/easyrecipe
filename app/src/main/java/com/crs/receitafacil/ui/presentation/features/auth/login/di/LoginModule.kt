@@ -50,10 +50,8 @@ object LoginModule {
     @Provides
     fun providesLoginUseCase(
         loginRepository: LoginRepository,
-        dispatchersProvider: DispatchersProvider
     ): LoginUseCase {
         return LoginUseCaseImpl(
-            dispatchersProvider = dispatchersProvider,
             loginRepository = loginRepository
         )
     }
